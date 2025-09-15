@@ -23,7 +23,29 @@ public class FileHandlingActivity {
         sharpie.write("My password is 1234!");
         sharpie.close();
         
-        // d. Read and display file contents
+        String stolenCreditCard = "";
+        FileReader readingGlasses = new FileReader(creditCard);
+        while (readingGlasses.ready()){
+            stolenCreditCard += (char)readingGlasses.read();
+        }
+        System.out.println(stolenCreditCard);
+        readingGlasses.close();
+        
+        String stolenSSN = "";
+        FileReader readingGoggles = new FileReader(SSN);
+        while (readingGoggles.ready()){
+            stolenSSN += (char)readingGoggles.read();
+        }
+        System.out.println(stolenSSN);
+        readingGoggles.close();
+
+        String stolenPasswords = "";
+        FileReader readingSnorkel = new FileReader(passwords);
+        while (readingSnorkel.ready()){
+            stolenPasswords += (char)readingSnorkel.read();
+        }
+        System.out.println(stolenPasswords);
+        readingSnorkel.close();
         
         // e. Create backup directory
         
