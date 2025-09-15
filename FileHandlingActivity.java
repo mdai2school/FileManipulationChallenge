@@ -6,14 +6,13 @@ public class FileHandlingActivity {
         File dir = new File("Maine");
         dir.mkdir();
 
-        File creditCard = new File("myCreditCard");
+        File creditCard = new File(dir,"myCreditCard");
         creditCard.createNewFile();
-        File SSN = new File("mySSN");
+        File SSN = new File(dir,"mySSN");
         SSN.createNewFile();
-        File passwords = new File("myPasswords");
+        File passwords = new File(dir,"myPasswords");
         passwords.createNewFile();
 
-        // c. Write messages to files
         FileWriter pencil = new FileWriter(creditCard);
         pencil.write("My credit card number is 15!");
         pencil.close();
@@ -23,6 +22,7 @@ public class FileHandlingActivity {
         FileWriter sharpie = new FileWriter(passwords);
         sharpie.write("My password is 1234!");
         sharpie.close();
+        
         // d. Read and display file contents
         
         // e. Create backup directory
