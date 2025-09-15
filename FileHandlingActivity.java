@@ -92,6 +92,14 @@ public class FileHandlingActivity {
         passwordCopier.write(passwordInfo);
         passwordCopier.close();
 
-        // g. List all files in both directories
+        System.out.println("dir:");
+        for (File fill: dir.listFiles()){
+            System.out.println(fill.getName());
+        }
+
+        System.out.println("backupDir:");
+        for (File fill: backupDir.listFiles()){
+            System.out.println(fill.getName());
+        }
     }
 }
