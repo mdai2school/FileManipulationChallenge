@@ -1,11 +1,11 @@
 import java.io.*;
 
 public class FileHandlingActivity {
-    public static void main(String[] args) {
-        // Your code here
-        
+    public static void main(String[] args) {        
         // a. Create main directory
-        
+        File dir = new File("Maine");
+        dir.mkdir();
+
         // b. Create three text files
         
         // c. Write messages to files
