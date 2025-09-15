@@ -49,8 +49,49 @@ public class FileHandlingActivity {
         
         File backupDir = new File("Pencilvania");
         backupDir.mkdir();
-        // f. Copy contents to backup file
         
+        
+        File fraudulentCreditCard = new File(backupDir,"ourCreditCard");
+        fraudulentCreditCard.createNewFile();
+
+        String cardInfo = "";
+        FileReader cardScanner = new FileReader(creditCard);
+        while (cardScanner.ready()){
+            cardInfo += (char)cardScanner.read();
+        }
+        cardScanner.close();
+        FileWriter cardCopier = new FileWriter(fraudulentCreditCard);
+        cardCopier.write(cardInfo);
+        cardCopier.close();
+
+
+        File fraudulentSSN = new File(backupDir,"ourSSN");
+        fraudulentSSN.createNewFile();
+
+        String SSNInfo = "";
+        FileReader SSNScanner = new FileReader(SSN);
+        while (SSNScanner.ready()){
+            SSNInfo += (char)SSNScanner.read();
+        }
+        SSNScanner.close();
+        FileWriter SSNCopier = new FileWriter(fraudulentSSN);
+        SSNCopier.write(SSNInfo);
+        SSNCopier.close();
+       
+
+        File fraudulentPassword = new File(backupDir,"ourPasswords");
+        fraudulentPassword.createNewFile();
+
+        String passwordInfo = "";
+        FileReader passwordScanner = new FileReader(passwords);
+        while (passwordScanner.ready()){
+            passwordInfo += (char)passwordScanner.read();
+        }
+        passwordScanner.close();
+        FileWriter passwordCopier = new FileWriter(fraudulentPassword);
+        passwordCopier.write(passwordInfo);
+        passwordCopier.close();
+
         // g. List all files in both directories
     }
 }
