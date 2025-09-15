@@ -47,8 +47,8 @@ public class FileHandlingActivity {
         System.out.println(stolenPasswords);
         readingSnorkel.close();
         
-        // e. Create backup directory
-        
+        File backupDir = new File("Pencilvania");
+        backupDir.mkdir();
         // f. Copy contents to backup file
         
         // g. List all files in both directories
