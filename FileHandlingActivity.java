@@ -1,7 +1,24 @@
 import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class FileHandlingActivity {
+    public static void debugFileOperation(){
+        try {
+        File file = new File("fileName.txt");
+        
+        FileWriter writer = new FileWriter(file);
+        writer.write("Will this fail?");
+        writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+            e.printStackTrace(); 
+        }
+    }
     public static void main(String[] args) throws IOException {        
+
+        debugFileOperation();
 
         File dir = new File("Maine");
         dir.mkdir();
